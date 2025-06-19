@@ -227,6 +227,16 @@ html, body {
     background: rgb(12, 12, 12)
 }
 
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
+    z-index: 20;
+}
+
 .player-options {
     display: flex;
     justify-content: space-between;
