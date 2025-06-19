@@ -8,11 +8,14 @@ html, body {
 }
 
 
-.home .container {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
+.home-bottom {
+  display: flex;
+  flex-direction: column; /* empile logo et sidebar verticalement */
+  align-items: center; /* centre horizontalement logo et sidebar */
+  height: 700px;  /* ta fenêtre */
+  width: 700px;
+  padding-top: 20px; /* espace en haut */
+  box-sizing: border-box;
 }
 
 /*******************************************************************************
@@ -219,31 +222,22 @@ html, body {
  ******************************************************************************/
 
 .sidebar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background: rgb(12, 12, 12)
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* centre verticalement les enfants */
+  height: 50px;
+  border-radius: 10px;
 }
 
-
-.logo {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 60px;
-    z-index: 20;
-}
-
-.player-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 15px;
-    height: 3rem;
-    margin: 0 1.5rem;
+.logo-container {
+  height: 250px;
+  width: 250px;
+  background: url('../../images/default/logo.png') no-repeat center center;
+  background-size: contain;
+  image-rendering: pixelated;
+  border-radius: 15px;
+  margin-bottom: 20px; /* espace sous le logo */
 }
 
 .player-head {
@@ -254,7 +248,7 @@ html, body {
     height: 3rem;
     width: 3rem;
     pointer-events: none;
-    border-radius: 15px;
+    border-radius: 0px;
 }
 
 .player-menu {
@@ -339,7 +333,6 @@ html, body {
     height: 3rem;
     font-size: 3rem;
     color: var(--element-color);
-    margin: 0 1.5rem;
 }
 
 .instance-popup {
