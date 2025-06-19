@@ -1,11 +1,11 @@
 {
-    "name": "Selvania-Launcher",
-    "preductname": "Selvania Launcher",
-    "version": "2.1.1",
-    "description": "Launcher Mincraft pour le serveur Selvania",
+    "name": "Fateless Launcher",
+    "preductname": "Fateless Launcher",
+    "version": "1.0.0",
+    "description": "Launcher Mincraft pour le serveur Fateless",
     "main": "src/app.js",
     "author": {
-        "name": "luuxis, Inc.",
+        "name": "luuxis, Cappossy, Inc.",
         "email": "contact@luuxis.fr",
         "url": "https://github.com/luuxis"
     },
@@ -39,6 +39,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/luuxis/Selvania-Launcher.git"
+        "url": "git+hhttps://github.com/Cappossy/Fateless-Launcher-2.git"
     }
 }
