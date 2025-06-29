@@ -222,12 +222,17 @@ html, body {
  ******************************************************************************/
 
 .sidebar {
+  position: fixed;
+  bottom: 100px;        /* remonte la barre de 40px du bas */
+  left: 50%;           /* positionne le point de départ au milieu de l’écran */
+  transform: translateX(-50%);  /* décale la barre de 50% de sa propre largeur vers la gauche pour centrer */
   width: 80%;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* centre verticalement les enfants */
+  align-items: center;
   height: 50px;
   border-radius: 10px;
+  background: transparent; 
 }
 
 .logo-container {
@@ -245,8 +250,8 @@ html, body {
     background-size: cover;
     image-rendering: pixelated;
     transition: var(--transition);
-    height: 3rem;
-    width: 3rem;
+    height: 4rem;
+    width: 4rem;
     pointer-events: none;
     border-radius: 0px;
 }
@@ -279,7 +284,7 @@ html, body {
     border-radius: 10px;
     background: none;
     color: var(--color);
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bolder;
     padding: 0 1.5rem;
     pointer-events: none;

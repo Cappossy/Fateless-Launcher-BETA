@@ -60,30 +60,39 @@ class Launcher {
         });
     }
 
-    initFrame() {
-        console.log('Initializing Frame...')
-        const platform = os.platform() === 'darwin' ? "darwin" : "other";
+initFrame() {
+    console.log('Initializing Frame...');
+    const platform = os.platform() === 'darwin' ? "darwin" : "other";
 
-        document.querySelector(`.${platform} .frame`).classList.toggle('hide')
+    document.querySelector(`.${platform} .frame`).classList.toggle('hide');
 
-        document.querySelector(`.${platform} .frame #minimize`).addEventListener('click', () => {
+    const minimizeBtn = document.querySelector(`.${platform} .frame #minimize`);
+    if (minimizeBtn) {
+        minimizeBtn.addEventListener('click', () => {
             ipcRenderer.send('main-window-minimize');
         });
-
-        let maximized = false;
-        let maximize = document.querySelector(`.${platform} .frame #maximize`);
-        maximize.addEventListener('click', () => {
-            if (maximized) ipcRenderer.send('main-window-maximize')
-            else ipcRenderer.send('main-window-maximize');
-            maximized = !maximized
-            maximize.classList.toggle('icon-maximize')
-            maximize.classList.toggle('icon-restore-down')
-        });
-
-        document.querySelector(`.${platform} .frame #close`).addEventListener('click', () => {
-            ipcRenderer.send('main-window-close');
-        })
     }
+
+    // Sécuriser la récupération du bouton maximize, peut être null
+    const maximizeBtn = document.querySelector(`.${platform} .frame #maximize`);
+    if (maximizeBtn) {
+        let maximized = false;
+        maximizeBtn.addEventListener('click', () => {
+            ipcRenderer.send('main-window-maximize');
+            maximized = !maximized;
+            maximizeBtn.classList.toggle('icon-maximize');
+            maximizeBtn.classList.toggle('icon-restore-down');
+        });
+    }
+
+    const closeBtn = document.querySelector(`.${platform} .frame #close`);
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            ipcRenderer.send('main-window-close');
+        });
+    }
+}
+
 
     async initConfigClient() {
         console.log('Initializing Config Client...')
